@@ -1,0 +1,139 @@
+### Configuration
+@baseUrl = http://localhost:4000/api
+@adminToken = 
+
+### ========== ROUTES PUBLIQUES ==========
+
+### 1. Health check
+GET {{baseUrl}}/health
+
+### 2. Lister les projets (GET public)
+GET {{baseUrl}}/projects
+
+### 3. Lister les compétences (GET public)
+GET {{baseUrl}}/skills
+
+### ========== FORMULAIRE DE CONTACT ==========
+
+### 4. Envoyer un message de contact
+POST {{baseUrl}}/contact
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "message": "Ceci est un message de test pour vérifier que le formulaire fonctionne correctement",
+  "consent": true
+}
+
+### ========== ADMIN LOGIN ==========
+
+### 5. Login admin (remplace avec tes identifiants)
+POST {{baseUrl}}/admin/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "password123"
+}
+
+### ========== ROUTES ADMIN PROTÉGÉES (avec token JWT) ==========
+### Après login, copie le token reçu et paste-le après @adminToken = 
+
+### 6. Lister les projets (admin)
+GET {{baseUrl}}/admin/projects
+Authorization: Bearer {{adminToken}}
+
+### 7. Créer un nouveau projet
+POST {{baseUrl}}/admin/projects
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "title": "Nouveau projet test",
+  "description": "Un super projet créé via l'API",
+  "tags": ["React", "API", "Test"],
+  "link": "https://github.com/example"
+}
+
+### 8. Mettre à jour un projet (remplace PROJECT_ID)
+PATCH {{baseUrl}}/admin/projects/PROJECT_ID_ICI
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "title": "Projet mis à jour",
+  "description": "Description modifiée"
+}
+
+### 9. Supprimer un projet (remplace PROJECT_ID)
+DELETE {{baseUrl}}/admin/projects/PROJECT_ID_ICI
+Authorization: Bearer {{adminToken}}
+
+### 10. Lister les compétences (admin)
+GET {{baseUrl}}/admin/skills
+Authorization: Bearer {{adminToken}}
+
+### 11. Créer une nouvelle compétence
+POST {{baseUrl}}/admin/skills
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "name": "Rust",
+  "level": 30,
+  "category": "Backend"
+}
+
+### 12. Mettre à jour une compétence (remplace SKILL_ID)
+PATCH {{baseUrl}}/admin/skills/SKILL_ID_ICI
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "name": "Rust",
+  "level": 50
+}
+
+### 13. Supprimer une compétence (remplace SKILL_ID)
+DELETE {{baseUrl}}/admin/skills/SKILL_ID_ICI
+Authorization: Bearer {{adminToken}}
+
+### 14. Lister les messages de contact
+GET {{baseUrl}}/admin/messages
+Authorization: Bearer {{adminToken}}
+
+### ========== TESTS DE VALIDATION ==========
+
+### 15. Test validation - Email invalide
+POST {{baseUrl}}/contact
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "email": "invalid-email",
+  "message": "Test",
+  "consent": true
+}
+
+### 16. Test validation - Message trop court
+POST {{baseUrl}}/contact
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "email": "test@example.com",
+  "message": "Trop court",
+  "consent": true
+}
+
+### 17. Test validation - Consentement refusé
+POST {{baseUrl}}/contact
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "email": "test@example.com",
+  "message": "Ceci est un message de test",
+  "consent": false
+}
