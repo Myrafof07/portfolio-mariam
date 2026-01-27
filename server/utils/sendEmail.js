@@ -6,7 +6,7 @@ export async function sendEmail({ from, to, subject, text, html }) {
 
   // Si SMTP non configuré, simule seulement
   if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
-    console.warn('ℹ️ SMTP non configuré. Email simulé (aucun envoi).');
+    console.warn('ℹ SMTP non configuré. Email simulé (aucun envoi).');
     console.info('--- EMAIL SIMULÉ ---');
     console.info('To:', to);
     console.info('Subject:', subject);
