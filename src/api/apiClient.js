@@ -3,7 +3,9 @@
  * Utilise fetch natif + gestion d'erreurs
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+// default to a relative path so production builds still work
+// even if the env var was accidentally omitted
+const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 /**
  * Wrapper autour fetch avec gestion d'erreurs

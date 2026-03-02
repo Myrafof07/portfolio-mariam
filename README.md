@@ -3,7 +3,7 @@
 > Site portfolio personnel full-stack construit avec React, Node.js, MongoDB et Tailwind CSS. 
 > Conforme RGPD et UE7 avec admin panel dynamique.
 
-🔗 **[Voir le site en ligne](https://portfolio-mariam-steel.vercel.app)**
+🔗 **[Voir le site en ligne](https://portfolio-mariam-steel.vercel.app/)**
 
 ---
 
@@ -110,11 +110,7 @@ Ce projet est un **portfolio professionnel full-stack** qui combine :
 - npm ou yarn
 - MongoDB (local ou Atlas)
 
-### Clone le projet
-```bash
-git clone https://github.com/mariamfofana/portfolio-mariam.git
-cd portfolio-mariam
-```
+
 
 ### Frontend
 ```bash
@@ -441,8 +437,8 @@ Ce projet est personnel. Les contributions externe ne sont pas acceptées.
 
 **Mariam Fofana**
 - Email : mf8013006@gmail.com
-- GitHub : [github.com/mariamfofana](https://github.com/mariamfofana)
-- Portfolio : [portfolio-mariam.vercel.app](https://portfolio-mariam.vercel.app)
+- GitHub : [github.com/mariamfofana](https://github.com/Myrafof07/portfolio-mariam)
+- Portfolio : [portfolio-mariam.vercel.app](https://portfolio-mariam-steel.vercel.app/)
 
 ---
 
@@ -489,11 +485,11 @@ Ouvrir http://localhost:5173 (ou l'URL indiquée) pour voir le site en développ
 
 4. Lien github 
 
-https://github.com/Myrafof07 
+https://github.com/Myrafof07/portfolio-mariam 
 
 
 5. Lien du site 
-https://portfolio-mariam-steel.vercel.app/
+https://portfolio-mariam-steel.vercel.app//
 
 ## Scripts usuels
 
